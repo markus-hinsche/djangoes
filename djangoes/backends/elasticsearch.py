@@ -11,8 +11,8 @@ from django.core.exceptions import ImproperlyConfigured
 from elasticsearch.client import Elasticsearch, Transport
 from elasticsearch.connection.http_urllib3 import Urllib3HttpConnection
 from elasticsearch.connection.http_requests import RequestsHttpConnection
-from elasticsearch.connection.thrift import ThriftConnection
-from elasticsearch.connection.memcached import MemcachedConnection
+#from elasticsearch.connection.thrift import ThriftConnection
+#from elasticsearch.connection.memcached import MemcachedConnection
 
 from .abstracts import Base
 
@@ -222,15 +222,15 @@ class SimpleRequestsHttpBackend(BaseElasticsearchBackend):
     connection_class = RequestsHttpConnection
 
 
-class SimpleThriftBackend(BaseElasticsearchBackend):
-    """Connection backend using the Thrift experimental connection class."""
-    connection_class = ThriftConnection
+#class SimpleThriftBackend(BaseElasticsearchBackend):
+#    """Connection backend using the Thrift experimental connection class."""
+#    connection_class = ThriftConnection
 
 
-class SimpleMemcachedBackend(BaseElasticsearchBackend):
-    """Connection backend using the Memcache connection class.
-
-    As describe in the ``MemcachedConnection``, a plugin must be installed in
-    the ElasticSearch cluster in order to work.
-    """
-    connection_class = MemcachedConnection
+#class SimpleMemcachedBackend(BaseElasticsearchBackend):
+#    """Connection backend using the Memcache connection class.
+#
+#    As describe in the ``MemcachedConnection``, a plugin must be installed in
+#    the ElasticSearch cluster in order to work.
+#    """
+#    connection_class = MemcachedConnection
